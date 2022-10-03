@@ -64,7 +64,7 @@ Kom ihåg att du kan toggla klasser med classList.toggle(). Exempelvis lämpligt
 * Använd en bool-variabel om spelet är gameover eller inte 
 
 # Bild på Grisspelet
-![Grisspelet]()
+![Grisspelet](https://github.com/chasacademy-sandra-larsson/js--pig-game/blob/main/screen.png)
 
 
 
