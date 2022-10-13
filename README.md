@@ -1,7 +1,6 @@
 # Javascript - Grisspelet   
 
-Syftet med denna uppgift är att fördjupa sin kunskaper i Javascript genom att göra ett interaktivt spel. Du får färdig HTML och CSS samt bilder och du skriver endast Javascript i app.js. Du använder dig av DOM för att interagera med HTML/CSS. För att reagera på en händelse (ex musklick) så att olika funktioner triggas använder du dig av metoden addEventListener().
-
+Du använder dig av DOM:en för att interagera med HTML/CSS. Du använder enbart Vanilla JavaScript (inget ramverk/bibliotek). 
 
 ## Spelregler
 
@@ -9,15 +8,14 @@ Syftet med denna uppgift är att fördjupa sin kunskaper i Javascript genom att 
 * För varje omgång "kastar" den ena spelaren tärning genom att klicka "SLÅ TÄRNING". Man får kasta tärning så många gånger man vill. Varje kast adderas till OMGÅNGSPOÄNG.  
 * MEN, om en deltagare slår en 1:a går alla poäng i den omgången förlorade. Efter det är det andra spelarens tur.
 * En spelare kan välja att stanna och välja "HÅLL POÄNG". Då adderas poängen i OMGÅNGSPOÄNG till den TOTAL:a poängen. Efter det är det andra spelarens tur.
-* Den spelare som når först 100 poäng på "TOTAL POÄNG" vinner spelet. Då ska det stå "VINNARE" istället för spelarens namn. Man ska inte kunna spela tärningarna. Endast starta "NYTT SPEL".
+* Den spelare som når först 100 poäng på "TOTAL POÄNG" vinner spelet. Då ska det stå "VINNARE" istället för spelarens namn. Dä är tillståndet gameover och man kan inte spela vidare, endast klicka "NYTT SPEL" där en ny spelomgång initieras.
 
 
-## Dina tre utmaningar (extra)
+## Extra
 Ändra spelets regler genom att lägga till de här förutsättningarna.
 
 1. En spelare förlorar hela sin poängsumma om två 6:or slås direkt efter varandra. Efter det är det andra spelarens tur. (Tips: Spara alltid föregående tärningskast i en separat variabel)
 2. Lägg till ett inputfält i HTML där man kan ändra antal poäng för att vinna spelet.
-3. Lägg till ytterligare en tärning i spelet så att det finns två tärningar. En spelare förlorar poängen i omgången då en av tärningarna är en 1:a. (Tips: Här får du ändra lite i CSS för att placera två tärningarn istället för en).
 
 
 ## Bra att veta
@@ -63,7 +61,7 @@ Kom ihåg att du kan toggla klasser med classList.toggle(). Exempelvis lämpligt
 
 * Använd en bool-variabel om spelet är gameover eller inte 
 
-# Bild på Grisspelet
+# Exempel
 ![Grisspelet](https://github.com/chasacademy-sandra-larsson/js--pig-game/blob/main/screen.png)
 
 
