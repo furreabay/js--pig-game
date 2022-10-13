@@ -2,6 +2,8 @@
 
 Du använder dig av DOM:en för att interagera med HTML/CSS. Du använder enbart Vanilla JavaScript (inget ramverk/bibliotek). 
 
+Du får en färdig html att utgå ifrån, men där du är fri att ändra. Du stylar i CSS efter egna prefrenser. 
+
 ## Spelregler
 
 * Spelet har två deltagare där vardera spelar var sin omgång.
