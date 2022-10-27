@@ -1,1 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto";
+    min-height: 100vh;
+
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.game-area {
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.player-0-panel,
+.player-1-panel {
+    font-size: 3rem;
+    font-weight: 300;
+
+    padding: 5rem 0;
+
+    display: flex;
+    width: 50%;
+
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.player-score {
+    margin-bottom: 5em;
+}
+
+.player-current-box {
+    padding: .5em 1em;
+    background-color: #EA4D4D;
+}
+
+.player-current-label {
+    padding-bottom: .5em;
+}
+
+.active {
+    background: #F7F7F7;
+}
+
+.player-stuff {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button,
+input {
+    text-align: center;
+    font-size: 2rem;
+    background: none;
+    border: none;
+
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+input {
+    background: rgb(195, 195, 195);
+}
+
+i {
+    font-size: 2.5rem;
+    margin-right: .5em;
+
+    color: #EA4D4D;
+}
