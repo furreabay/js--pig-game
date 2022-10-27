@@ -41,6 +41,8 @@ body {
 .player-current-box {
     padding: .5em 1em;
     background-color: #EA4D4D;
+
+    font-size: 2rem;
 }
 
 .player-current-label {
@@ -49,6 +51,7 @@ body {
 
 .active {
     background: #F7F7F7;
+    color: purple;
 }
 
 .player-stuff {
@@ -56,6 +59,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     height: 100%;
 
     left: 50%;
@@ -73,8 +77,17 @@ input {
     font-weight: lighter;
 }
 
+button {
+    cursor: pointer;
+}
+
 input {
     background: rgb(195, 195, 195);
+}
+
+img {
+    width: 10rem;
+    box-shadow: 0 0 10px black;
 }
 
 i {
