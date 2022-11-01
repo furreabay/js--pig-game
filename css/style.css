@@ -82,7 +82,8 @@ button {
 }
 
 input {
-    background: rgb(195, 195, 195);
+    background: #EA4D4D;
+    color: white;
 }
 
 img {

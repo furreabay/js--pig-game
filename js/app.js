@@ -6,6 +6,9 @@ const playerTwoName = document.getElementById("name-1");
 const playerOneDefaultName = document.getElementById("name-0").textContent;
 const playerTwoDefaultName = document.getElementById("name-1").textContent;
 
+const playerOneNameInput = document.querySelector(".player-0-name-input");
+const playerTwoNameInput = document.querySelector(".player-1-name-input");
+
 const newGame = document.querySelector(".btn-new");
 const rollButton = document.querySelector(".btn-roll");;
 const holdPoints = document.querySelector(".btn-hold");
@@ -17,6 +20,8 @@ const scoreTwo = document.getElementById("score-1");
 
 const totalScoreOne = document.getElementById("current-0");
 const totalScoreTwo = document.getElementById("current-1");
+
+
 
 let playerOneRoundPoints = 0;
 let playerTwoRoundPoints = 0;
@@ -30,15 +35,33 @@ rollButton.addEventListener("click", rollDice);
 holdPoints.addEventListener("click", keepPoints)
 newGame.addEventListener("click", startNewGame)
 
+//
+playerOneNameInput.addEventListener("click", changeName(playerOneNameInput))
+playerTwoNameInput.addEventListener("click", changeName(playerTwoNameInput))
+
+function changeName(nameInput) {
+    nameInput.addEventListener("keypress", function (e) {
+        if (e.key === 'Enter') {
+            if (nameInput == playerOneNameInput) {
+                playerOneName.textContent = nameInput.value.toString();
+            } else if (nameInput == playerTwoNameInput) {
+                playerTwoName.textContent = nameInput.value.toString();
+            }
+        }
+    });
+}
+//
+
 function gameOver() {
-    if ((playerOneTotalPoints || playerTwoTotalPoints) == maxPoints) {
+    if ((playerOneTotalPoints == maxPoints) || (playerTwoTotalPoints == maxPoints)) {
         rollButton.style.pointerEvents = "none";
         holdPoints.style.pointerEvents = "none";
+        console.log("playeronepts = " + playerOneTotalPoints + " playertwopts = " + playerTwoTotalPoints)
     }
 
+    //change name of player to "VINNARE!!!"
     if (playerOneTotalPoints == maxPoints) {
         playerOneName.textContent = "VINNARE!!!"
-
     } else if (playerTwoTotalPoints == maxPoints) {
         playerTwoName.textContent = "VINNARE!!!"
     }
@@ -46,7 +69,7 @@ function gameOver() {
 
 function keepPoints() {
     //add the roundpoints to the totalpoints
-    if ((playerOneTotalPoints + playerOneRoundPoints < maxPoints) && (playerTwoTotalPoints + playerTwoRoundPoints < maxPoints)) {
+    if (((playerOneTotalPoints + playerOneRoundPoints) < maxPoints) && ((playerTwoTotalPoints + playerTwoRoundPoints) < maxPoints)) {
         if (playerOnePanel.classList.contains("active")) {
             playerOneTotalPoints += playerOneRoundPoints;
         }
@@ -64,6 +87,8 @@ function keepPoints() {
     } else {
         if (playerOnePanel.classList.contains("active")) {
             playerOneTotalPoints = maxPoints;
+
+            gameOver();
         }
         else if (playerTwoPanel.classList.contains("active")) {
             playerTwoTotalPoints = maxPoints;
@@ -76,8 +101,9 @@ function keepPoints() {
         playerTwoRoundPoints = 0;
         scoreOne.textContent = playerOneRoundPoints.toString();
         scoreTwo.textContent = playerTwoRoundPoints.toString();
+
+        gameOver();
     }
-    gameOver();
 }
 
 function startNewGame() {
@@ -112,6 +138,13 @@ function randomDice() {
 
 
 function rollDice() {
+    //will make the inputs dissapear
+    playerOneNameInput.style.opacity = 0;
+    playerTwoNameInput.style.opacity = 0;
+    playerOneNameInput.style.pointerEvents = "none";
+    playerTwoNameInput.style.pointerEvents = "none";
+    //
+
     const diceRolled = randomDice();
     //Makes current diceroll value add to the round point
     if (playerOnePanel.classList.contains("active")) {
